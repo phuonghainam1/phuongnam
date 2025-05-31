@@ -7,7 +7,7 @@ namespace BT_L0_PhuongHaiNam
     {
         public static void Main(string[] args)
         {
-            StudentService.LoadFromFile(); // Load existing students from file at startup
+            StudentService.LoadFromFile(); 
             while (true)
             {
                 Console.WriteLine("\nStudent Management System");
@@ -72,7 +72,7 @@ namespace BT_L0_PhuongHaiNam
                         StudentService.SaveToFile();
                         break;
                     case 10:
-                        StudentService.SaveToFile(); // Save before exiting
+                        StudentService.SaveToFile();
                         Console.WriteLine("Exiting program.");
                         return;
                     default:
