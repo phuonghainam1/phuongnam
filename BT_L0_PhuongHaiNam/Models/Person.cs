@@ -14,7 +14,7 @@ public class Person
     }
     public Person(string name, DateTime dob, string address, double height, double weight)
     {
-        // id = nextId++;
+        Id = nextId++;
         Name = name;
         Dob = dob;
         Address = address;

@@ -99,7 +99,9 @@ public class StudentService
                 }
 
                 Student student1 = new Student(name, dob, address, height, weight, studentId, school, enrollmentYear, gpa);
+                student1.AssignId();
                 AddStudent(student1);
+                Console.WriteLine(student1.ToString());
                 return;
             }
             catch (Exception ex)
@@ -147,7 +149,7 @@ public class StudentService
 
                 if (!string.IsNullOrEmpty(dobInput))
                 {
-                    if (!Validation.Validation.ParseDateTime(dobInput, "dd-MM-yyyy", out DateTime dob))
+                    if (!Validation.Validation.ParseDateTime(dobInput, "dd-MM-yyyy", out DateTime dob) || !Validation.Validation.IsValidBirthDate(dob))
                     {
                         continue;
                     }
