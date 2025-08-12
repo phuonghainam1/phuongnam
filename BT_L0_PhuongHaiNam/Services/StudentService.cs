@@ -138,11 +138,14 @@ public class StudentService
             {
                 Console.WriteLine("Enter new name (or press Enter to keep current):");
                 string name = Console.ReadLine()!;
-                if (!Validation.Validation.IsValidName(name))
+                if (!string.IsNullOrEmpty(name)) // Chỉ kiểm tra nếu người dùng nhập giá trị
                 {
-                    continue;
+                    if (!Validation.Validation.IsValidName(name))
+                    {
+                        continue;
+                    }
+                    updatedStudent.Name = name;
                 }
-                updatedStudent.Name = name;
 
                 Console.WriteLine("Enter new Date of Birth (dd-MM-yyyy) (or press Enter to keep current): ");
                 string dobInput = Console.ReadLine()!;
